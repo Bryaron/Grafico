@@ -1,0 +1,11 @@
+
+body{
+    background:red;
+    background: linear-gradient(to right, yellow, orange)
+}
+
+.bg{
+    /* background-image:url(img/logoLogin.jpg); */
+    background-position: center center;
+    background-size: cover;
+}
