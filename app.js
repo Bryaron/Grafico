@@ -72,6 +72,7 @@ function mostrarGrafico(){
     ]
 
     console.log(data)
+    
 
     myChart.data.datasets[0].data[0] = datoEne;
     myChart.data.datasets[0].data[1] = datoFeb;
@@ -112,6 +113,32 @@ function alternarGrafico(){
 
 function cargarBD() {
 
+    
 
+    const guardarArchivoDeTexto = (contenido, nombre) => {
+        const a = document.createElement("a");
+        const archivo = new Blob(["*****Ganancias por mes:*****\n",
+                                 "Enero: ",contenido[0]," soles.\n",
+                                 "Febrero ",contenido[1]," soles.\n",
+                                 "Marzo: ",contenido[2]," soles.\n",
+                                 "Abril: ",contenido[3]," soles.\n",
+                                 "Mayo: ",contenido[4]," soles.\n",
+                                 "Junio: ",contenido[5]," soles.\n",
+                                 "Julio: ",contenido[6]," soles.\n",
+                                 "Agosto: ",contenido[7]," soles.\n",
+                                 "Setiembre: ",contenido[8]," soles.\n",
+                                 "Octubre: ",contenido[9]," soles.\n",
+                                 "Noviembre: ",contenido[10]," soles.\n",
+                                 "Diciembre: ",contenido[11]," soles.\n",], { type: 'text/plain' });
+        const url = URL.createObjectURL(archivo);
+        a.href = url;
+        a.download = nombre;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+
+    guardarArchivoDeTexto(data , "archivo.txt");
+    
     
 }
